@@ -1,0 +1,168 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import starImage from "../images/star.svg";
+---
+
+<Layout title="Welcome to Astro.">
+    <main>
+        <a
+            class="fullscreen-link"
+            href="https://linktr.ee/mcguinness"
+            target="_blank"
+            rel="noopener noreferrer"></a>
+        <div class="star-banner">
+            <div class="burst">
+                <Image src={starImage} alt="" />
+            </div>
+            <div class="line"></div>
+            <div class="burst">
+                <Image src={starImage} alt="" />
+            </div>
+        </div>
+
+        <div class="title-container">
+            <h1>MAKE</h1>
+            <h1>McGUINNESS</h1>
+            <h1>SAFE!</h1>
+        </div>
+
+        <div class="star-banner">
+            <div class="burst">
+                <Image src={starImage} alt="" />
+            </div>
+            <div class="line"></div>
+            <div class="burst">
+                <Image src={starImage} alt="" />
+            </div>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Titan+One&display=swap");
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    *:before,
+    *:after {
+        box-sizing: inherit;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    html,
+    body {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        padding: 0 32px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        font-family: "Titan One";
+        line-height: 1.5;
+        color: #000000;
+        background-color: #ffdc00;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    main {
+        margin: 0 auto;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    .burst {
+        width: 40px;
+        height: 40px;
+    }
+
+    .burst img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .title-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 4rem;
+        font-weight: 800;
+    }
+
+    h1 {
+        text-shadow: 10px 10px 0px #ffffff;
+    }
+
+    .line {
+        width: 100%;
+        height: 5px;
+        margin: 0 20px;
+        background-color: black;
+    }
+
+    .star-banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fullscreen-link {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        z-index: 9999;
+        /* Ensure the link is above other content */
+    }
+
+    footer {
+        position: fixed;
+        text-align: right;
+        bottom: 1px;
+        right: 10px;
+    }
+
+    footer .cta {
+        text-decoration-color: #000000;
+        text-decoration-thickness: 0.125em;
+        text-underline-offset: 1.5px;
+        text-decoration: underline;
+    }
+
+    /* Tablet */
+    @media (max-width: 985px) and (min-width: 500px) {
+        h1 {
+            font-size: 6rem;
+            text-shadow: 5px 5px 0px #ffffff;
+            line-height: 1.5;
+        }
+    }
+
+    /* Mobile */
+    @media screen and (max-width: 500px) {
+        h1 {
+            font-size: 3.2rem;
+            text-shadow: 5px 5px 0px #ffffff;
+            line-height: 1.5;
+        }
+
+        .title-container {
+            margin: 55px 0;
+        }
+    }
+</style>
